@@ -33,7 +33,7 @@ Imports the `getCardFromNumber` function and `cardIDs` map
 
 ### &lt;CardDisplay/>
 
-The CardDisplay React component has a couple of attributes that change how component presents itself and transforms when highlighting a specific card.
+The CardDisplay React component has a couple of attributes that change how the component presents itself and transforms when highlighting a specific card.
 
 ```jsx
 <CardDisplay [square={true|false}] [expand={true|false}] number="string" active="amex|discover|mc|visa" />
