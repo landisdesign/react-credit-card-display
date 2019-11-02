@@ -1,0 +1,143 @@
+$cards: "visa", "mc", "amex", "discover";
+
+@mixin activate($isActive: false) {
+	@each $activeName in $cards {
+
+		&.#{$activeName} {
+			@each $name in $cards {
+				@if ($name == $activeName) == $isActive {
+					& > .#{$name} {
+						@content;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+%inline {
+	display: inline-block;
+	white-space: no-wrap;
+	height: 1.3em;
+	vertical-align: bottom;
+
+	& > * {
+		display: inline-block;
+		width: 2em;
+		margin-right: .1em;
+	}
+
+	& > :last-child {
+		margin-right: 0;
+	}
+}
+
+%opacity {
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: .5s;
+}
+
+%expand {
+	transition-property: width, height, margin, padding;
+	transition-duration: .3s;
+}
+
+.container {
+	@extend %inline;
+
+	& > * {
+		@extend %opacity;
+	}
+
+	@include activate {
+		opacity: .25;
+	}
+}
+
+.container-expand {
+	@extend %inline;
+
+	& > * {
+		@extend %expand;
+	}
+
+	@each $card in $cards {
+		&.#{$card} > * {
+			margin: 0;
+		}
+	}
+
+	@include activate {
+		width: 0;
+	}
+}
+
+%card-grid {
+	display: inline-grid;
+	grid: "v m"
+	      "a d";
+	width: 4.1em;
+	line-height: 0.1px;
+	vertical-align: middle;
+
+	& > * {
+		line-height: 0.1px;
+		width: 2em;
+		height: 100%;
+		padding: 0 .1em .1em 0;
+	}
+
+	svg {
+		display: block;
+	}
+
+	.mc {
+		grid-area: m;
+	}
+
+	.visa {
+		grid-area: v;
+	}
+
+	.amex {
+		grid-area: a;
+	}
+
+	.discover {
+		grid-area: d;
+	}
+}
+
+.square {
+	@extend %card-grid;
+
+	& > * {
+		@extend %opacity;
+	}
+
+	@include activate {
+		opacity: .25;
+	}
+}
+
+.square-expand {
+	@extend %card-grid;
+	height: 2.8em;
+
+	& > * {
+		@extend %expand;
+	}
+
+	@include activate {
+		width: 0;
+		padding: 0;
+	}
+
+	@include activate(true) {
+		width: 4em;
+		padding: 0;
+	}
+}
