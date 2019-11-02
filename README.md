@@ -31,7 +31,7 @@ import { getCardFromNumber, cardIDs } from 'react-credit-card-display';
 ```
 Imports the `getCardFromNumber` function and `cardIDs` map
 
-### <CardDisplay/>
+### &lt;CardDisplay/>
 
 The CardDisplay React component has a couple of attributes that change how component presents itself and transforms when highlighting a specific card.
 
