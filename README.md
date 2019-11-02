@@ -81,4 +81,4 @@ CardDisplay uses React Hooks and therefore has peer dependencies to `react^16.8.
 
 This project is licensed under a MIT license, found [here](./LICENSE.md).
 
-The SVG card icons are the property of [Volusion Services](https://codepen.io/volusion/pen/ogqWoj). Their license can be found [as part of this project](./src/CardDisplay/icons/README.md). 
+The SVG card icons are the property of [Volusion Services](https://codepen.io/volusion/details/ogqWoj). Their license can be found there. 
