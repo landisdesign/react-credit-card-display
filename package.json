@@ -1,6 +1,6 @@
 {
 	"name": "react-credit-card-display",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"description": "A React component for displaying Visa, MasterCard, American Express and Discover cards in a form",
 	"license": "MIT",
 	"author": "Michael Landis <michael4css@gmail.com> (https://michael-landis-awakening.com/development)",
